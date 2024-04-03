@@ -43,16 +43,11 @@ async def on_message(message):
 ```diff
 -L4 METHODS 
 ``` 
-TCP {TCP protocol verification mechanism.}
-TCPBYPASS {TCP protocol random flags / payloads}
-TCPLEGIT {TCP & UDP packet validation mechanism.}
-Handshake  {METHOD illegal}
 UDP {UDP protocol without encryption.}
-UDPPLAIN {UDP protocol without encryption.}
 ```ini
 [L7 METHODS]
 ``` 
-HTTP {Sites & Cloudflare}
+ZEUS {Sites & Cloudflare}
 BYPASS {Sites & Cloudflare}
 Usage:  attack [target] [port] [time] [Method]
   **"""
@@ -72,7 +67,7 @@ async def clear(ctx):
 
 @bot.command()
 async def join(ctx):
-    channel_id = 1147604242585092318  
+    channel_id = 1050334089749725195  
     channel = bot.get_channel(channel_id)
     
     if channel:
