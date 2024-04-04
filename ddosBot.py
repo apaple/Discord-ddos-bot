@@ -125,10 +125,13 @@ async def attack(ctx, host: str, port: int, attack_time: int, method: str):
     if response.status_code == 200:
 
         color = random.randint(0, 0xFFFFFF)  
+        
+        avatar_url = f'https://api.multiavatar.com/{random.randint(1, 99)}.png'
 
 
         embed = discord.Embed(title="Headshot Request Sent", color=color)
         embed.set_author(name=ctx.author.display_name, icon_url=ctx.author.avatar.url)
+        embed.set_footer(text=f"Request sent by {ctx.author.display_name}", icon_url=avatar_url)
         embed.add_field(name="User", value=ctx.author.mention, inline=True)
         embed.add_field(name="Host", value=host, inline=True)
         embed.add_field(name="Port", value=port, inline=True)
