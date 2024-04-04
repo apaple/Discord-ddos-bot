@@ -106,7 +106,7 @@ def get_ip_info(ip):
 @bot.command()
 @commands.guild_only()
 async def attack(ctx, host: str, port: int, attack_time: int, method: str):
-    if ctx.channel.id != 1147604242585092318:
+    if ctx.channel.id != 1050334089749725195:
         await ctx.send("Please use the command in the correct channel.")
         return
     
