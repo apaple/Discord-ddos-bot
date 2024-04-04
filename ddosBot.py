@@ -136,14 +136,12 @@ async def attack(ctx, host: str, port: int, attack_time: int, method: str):
 
 
         embed = discord.Embed(title="Headshot Request Sent", color=color)
-        embed.set_author(name=ctx.author.display_name, icon_url=ctx.author.avatar.url)
         embed.set_footer(text=f"Request sent by {ctx.author.display_name}", icon_url=avatar_url)
         embed.add_field(name="User", value=ctx.author.mention, inline=True)
         embed.add_field(name="Host", value=host, inline=True)
         embed.add_field(name="Port", value=port, inline=True)
         embed.add_field(name="Headshot Time", value=f"{attack_time} seconds", inline=True)
         embed.add_field(name="Method", value=method, inline=True)
-        embed.set_footer(icon_url=ctx.author.avatar.url)
         embed.timestamp = ctx.message.created_at
         
         await ctx.send(embed=embed)
