@@ -110,11 +110,15 @@ async def attack(ctx, host: str, port: int, attack_time: int, method: str):
         await ctx.send("Please use the command in the correct channel.")
         return
     
-    api_url = f'https://google.com/api/atk?key=APIKEY&host={host}&port={port}&time={attack_time}&method={method}'
+    with open('api_url.txt', 'r') as f:
+        api_url = f.read().strip()
+
+    api_url = f'{api_url}&host={host}&port={port}&time={attack_time}&method={method}'
     
     if attack_time > 300:
         await ctx.send("Max Time is 300 Seconds.")
         return
+        
         
     response = requests.get(api_url)
         
