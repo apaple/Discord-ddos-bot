@@ -111,8 +111,8 @@ async def attack(ctx, host: str, port: int, attack_time: int, method: str):
         return
 
     api_urls = [
-    "http://95.111.202.45/flood?key=jawa",
-    "http://95.111.203.212/flood?key=jawa"
+    "http://tes/flood?key=jawa",
+    "http://tes/flood?key=jawa"
 ]
 
 
